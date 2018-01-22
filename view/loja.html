@@ -1,0 +1,24 @@
+<div ng-include="'/view/components/cabecalho.html'">
+</div>
+
+<div class="container">
+    <div class="row">
+        <div style="margin-top:20px">
+            <div ng-repeat="loja in lojas">
+
+                <div class="well col-md-5 col-xs-12" style="margin-right:20px;"  ng-click="detalhes(loja)">
+                    <div class="row">
+                        <div class="col-md-12  col-xs-12">
+                            <strong>Nome:</strong>&nbsp;{{loja.nome}}
+                            <br/><strong>Endereço:</strong>&nbsp;{{loja.endereco}}
+                            <br/><strong>Quantidade de Sensores:</strong>&nbsp;{{loja.sensores.length}}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>

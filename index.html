@@ -1,0 +1,49 @@
+<html lang="pt-br" ng-app="umonitor">
+
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <title>U-Monitor</title>
+    <!-- Css -->
+    <link rel="stylesheet" type="text/css" href="/css/app.css">
+    <link rel="stylesheet" type="text/css" href="/lib/boostrap/css/bootstrap.css">
+    <!--  logo -->
+    <link rel="shortcut icon" href="/img/logo.png">
+    <!-- Modulos -->
+
+    <script src="/lib/angular/angular.js" type="text/javascript"></script>
+    <script src="/js/umonitor.js" type="text/javascript"></script>
+    <!--  Controller -->
+
+    <script src="/js/controller/loginController.js" type="text/javascript"></script>
+    <script src="/js/controller/dashboadController.js" type="text/javascript"></script>
+    <script src="/js/controller/lojaController.js" type="text/javascript"></script>
+    <script src="/js/controller/detalhesLoja.js" type="text/javascript"></script>
+    <script src="/js/controller/graficoController.js" type="text/javascript"></script>
+
+    <!--  Rotas  -->
+    <script src="/lib/angular/angular-route.js" type="text/javascript"></script>
+    <script src="/js/config/routeConfig.js" type="text/javascript"></script>
+    <script src="/js/config/config.js" type="text/javascript"></script>
+    <script src="/js/services/umonitorAPI.js" type="text/javascript"></script>
+
+    <!--     interceptors -->
+    <script src="/js/interceptors/loadingInterceptor.js" type="text/javascript"></script>
+    <script src="/js/config/interceptorConfig.js" type="text/javascript"></script>
+
+
+
+
+
+</head>
+
+<body>
+    <div ng-view></div>
+    
+    <script src="/lib/angular/Chart.min.js" type="text/javascript"></script>
+    <script src="/lib/angular/angular-chart.min.js" type="text/javascript"></script>
+    <script src="/lib/jquery/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="/lib/boostrap/js/bootstrap.js" type="text/javascript"></script>
+</body>
+
+</html>

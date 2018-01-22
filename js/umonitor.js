@@ -1,0 +1,1 @@
+angular.module("umonitor", ["ngRoute","chart.js" ]);
