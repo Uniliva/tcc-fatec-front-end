@@ -8,6 +8,7 @@ angular.module("umonitor").controller("loginController", function($scope, umonit
                  $scope.msgLogin = "Usuario não cadastrado!";                               
             } else {                
                  $scope.msgLogin = "E-mail ou senha inválidos!";
+                 console.log(error)
             }
         });
     }

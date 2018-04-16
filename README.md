@@ -15,3 +15,10 @@ Esse Repositorio foi criado para separa a parte de front-end da parte de serviç
 - AngularJS 1.6
 - Boostrap 3
 - Html, Css, JS
+
+
+# Instalação
+
+Para executar o codigo local é necessario fazer o clone do projero e executar
+ - npm install  //para baixar as dependencias
+ - npm run server //para executrar o no servidor lite-server
