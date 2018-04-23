@@ -1,11 +1,11 @@
 angular.module("umonitor").factory("umonitorAPI", function ($http, config) {
     var headers = {
-        headers: {            
+        "headers": {            
             "Content-Type": "application/json"
         }
     }
     var _validaUser = function (user) {
-        return $http.post(config.baseUrl + "/usuario/login", user);
+        return $http.post(config.baseUrl + "/usuario/login", {"email": "uni@uni.com", "senha": "asdadasd"});
     };
     
     var _getDadosSensores = function () {
