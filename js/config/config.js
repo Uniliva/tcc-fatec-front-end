@@ -1,3 +1,3 @@
 angular.module("umonitor").value("config",{
-	baseUrl:"localhost:8050"
+	baseUrl:"http:localhost:8050"
 });
