@@ -20,7 +20,7 @@ angular.module("umonitor").config(function ($routeProvider,  $locationProvider)
         controller: "graficoController",
          resolve: {
             dadosRouter: function (umonitorAPI, $route) {
-                return umonitorAPI.getDadosSensor($route.current.params.id);
+                return umonitorAPI.getDadosSensorQtd($route.current.params.id,20);
                 }
              
             }

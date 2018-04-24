@@ -1,16 +1,15 @@
 <div ng-include="'/view/components/cabecalho.html'">
 </div>
-
 <div class="container">
     <div class="row">
         <div style="margin-top:20px">
             <div ng-repeat="sensor in sensores">
-                <div class="alert alert-{{sensor.tema}} col-md-5 col-xs-12" style="margin-right:20px;" ng-click="grafico(sensor)">
+                <div class="alert alert-{{sensor.tema}} col-md-5 col-xs-12" style="margin-right:20px;" ng-click="grafico(sensor.id)">
                     <div class="row">
                         <div class="col-md-9  col-xs-12">
                             {{sensor.desc}}
                             <hr> {{sensor.msg}}
-                            <p>&nbsp;<strong>T-MIN:</strong>{{sensor.tMin}}&deg; &nbsp;&nbsp; <strong>T-MAX:</strong>{{sensor.tMax}}&deg;
+                            <p>&nbsp;<strong>T-MIN:</strong>{{sensor.tMin}}&deg; &nbsp;&nbsp; <strong>T-MAX:</strong>{{sensor.tMax}}&deg; &nbsp;&nbsp;<strong>Energia:</strong>{{sensor.energia}};
                                 <br/>&nbsp;<strong>T-ATUAL:</strong>&nbsp;{{sensor.tAtual}}&deg;&nbsp;&nbsp;&nbsp;<strong>Data:</strong>&nbsp;{{sensor.data | date:'dd/MM/yyyy hh:mm'}}</p>
 
                         </div>
