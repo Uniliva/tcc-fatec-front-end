@@ -6,7 +6,6 @@ angular.module("umonitor").controller("dashboardController", function ($scope, u
         umonitorAPI.getDados().then(function (resultado) {
                        
             var lista = resultado.data["sensores"];
-            console.log("sensorwe"+ lista)
             lista.forEach( s =>{
                 var sensor = {}
                 sensor.id = s.id;
