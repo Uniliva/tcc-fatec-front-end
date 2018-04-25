@@ -10,9 +10,9 @@ angular.module("umonitor").config(function ($routeProvider,  $locationProvider)
         controller: "loginController"
 
     });
-    $routeProvider.when('/dashboad', {
-        templateUrl: "/view/dashboad.html",
-        controller: "dashboadController"
+    $routeProvider.when('/dashboard', {
+        templateUrl: "/view/dashboard.html",
+        controller: "dashboardController"
     });
     
     $routeProvider.when('/grafico/:id', {
@@ -41,14 +41,7 @@ angular.module("umonitor").config(function ($routeProvider,  $locationProvider)
         controller: "detalhesLoja",
         resolve: {
             lojaRouter: function (umonitorAPI, $route) {
-                return umonitorAPI.getLojas().then(function (result) {
-                    lojas = result.data;
-                    loja = lojas.filter(function (loja) {
-                        return loja.idEstabelecimento == $route.current.params.id;
-                    });
-                    return loja[0];
-
-                })
+                return umonitorAPI.getLojasDetalhes($route.current.params.id);                  
             }
         }
     });

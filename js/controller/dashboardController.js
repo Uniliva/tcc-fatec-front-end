@@ -1,4 +1,4 @@
-angular.module("umonitor").controller("dashboadController", function ($scope, umonitorAPI, $location) {
+angular.module("umonitor").controller("dashboardController", function ($scope, umonitorAPI, $location) {
     var loop;
     var getDadosDados = function () {
         delete $scope.sensores;
@@ -6,14 +6,15 @@ angular.module("umonitor").controller("dashboadController", function ($scope, um
         umonitorAPI.getDados().then(function (resultado) {
                        
             var lista = resultado.data["sensores"];
-            lista.forEach( dado =>{
+            console.log("sensorwe"+ lista)
+            lista.forEach( s =>{
                 var sensor = {}
-                sensor.id = dado.id;
-                sensor.codigo = dado.codigo;
-                sensor.desc = dado.decricao;
-                sensor.item = dado.nomeEstabelemento;
-                sensor.tMin = dado.temperaturaMin;
-                sensor.tMax = dado.temperaturaMax;               
+                sensor.id = s.id;
+                sensor.codigo = s.codigo;
+                sensor.desc = s.decricao;
+                sensor.item = s.nomeEstabelemento;
+                sensor.tMin = s.temperaturaMin;
+                sensor.tMax = s.temperaturaMax;          
                 
                 var dados =   umonitorAPI.getDadosSensorQtd(sensor.id,1).then(result => {
                    var dados = result.data["dados"];
@@ -48,9 +49,9 @@ angular.module("umonitor").controller("dashboadController", function ($scope, um
             });
 
             var local = $location.path();
-            if (local === "/dashboad") {
+            if (local === "/dashboard") {
                 //chama a função que atualiza a cada x tempo em milisegundo
-                setTimeout(getDadosDados,20000);
+                setTimeout(getDadosDados,50000);
             }
 
 

@@ -2,7 +2,7 @@ angular.module("umonitor").controller("loginController", function($scope, umonit
     $scope.logar= function(){
         console.log($scope.user);
         umonitorAPI.ehValido($scope.user).then(function(result){
-            $location.path("/dashboad");
+            $location.path("/dashboard");
         }).catch(function (error) {
             if (error.status === 400) {                
                  $scope.msgLogin = "Usuario não cadastrado!";                               

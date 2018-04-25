@@ -1,3 +1,4 @@
 angular.module("umonitor").value("config",{
-	baseUrl:"http://localhost:8060"
+	baseUrl:"https://umonitor-api.herokuapp.com"
+	//baseUrl:"http://localhost:8060"
 });

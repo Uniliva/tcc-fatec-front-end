@@ -5,7 +5,7 @@ angular.module("umonitor").factory("umonitorAPI", function ($http, config) {
         }
     }
     var _validaUser = function (user) {
-        return $http.post(config.baseUrl + "/usuario/login", user);
+        return $http.post(config.baseUrl + "/usuarios/login", user);
     };
     
     var _getDadosSensores = function () {
@@ -17,14 +17,19 @@ angular.module("umonitor").factory("umonitorAPI", function ($http, config) {
     };
 
      var _getDadosLojas = function () {
-        return $http.get(config.baseUrl + "/lojas/todos");
+        return $http.get(config.baseUrl + "/estabelecimentos/todos");
+    };
+
+    var _getDadosLojasDetalhes = function (id) {
+        return $http.get(config.baseUrl + "/estabelecimentos/id/"+id);
     };
     
      var _postLoja = function (loja) {
-        return $http.post(config.baseUrl + "/lojas/nova", loja);
+         loja.id = loja.idEstabelecimento;
+        return $http.post(config.baseUrl + "/estabelecimentos/atualizar", loja);
     };    
      var _postSensor = function (sensor) {
-        return $http.post(config.baseUrl + "/sensores/novo", sensor);
+        return $http.post(config.baseUrl + "/sensores/atualizar", sensor);
     };
     
     var _getTodosDadosSensores = function (idLoja) {
@@ -35,8 +40,9 @@ angular.module("umonitor").factory("umonitorAPI", function ($http, config) {
         ehValido: _validaUser,
         getDados: _getDadosSensores,
         getLojas: _getDadosLojas,
-        postLoja: _postLoja,
-        postSensor:_postSensor,
+        getLojasDetalhes:_getDadosLojasDetalhes,
+        atualizarLoja: _postLoja,
+        atualizarSensor:_postSensor,
         getDadosSensor: _getTodosDadosSensores,
         getDadosSensorQtd: _getDadosSensoresQtd
 

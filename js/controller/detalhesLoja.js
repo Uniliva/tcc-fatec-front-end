@@ -1,14 +1,18 @@
 angular.module("umonitor").controller("detalhesLoja", function ($scope, lojaRouter,umonitorAPI) {
-    $scope.loja=lojaRouter;
+    $scope.loja=lojaRouter.data["estabelecimento"];
+
+    console.log( $scope.loja);
     
     
     $scope.atualizarLoja = function(){       
-        umonitorAPI.postLoja($scope.loja).then(function(result){
+        umonitorAPI.atualizarLoja($scope.loja).then(function(result){
              $scope.msgLoja="Dados da loja atualizado!";
         });
     };    
-    $scope.atualizarSensor = function(){   
-        umonitorAPI.postSensor($scope.sensor).then(function(result){
+    $scope.atualizarSensor = function(){ 
+        $scope.sensor.temperaturaMin = parseFloat($scope.sensor.temperaturaMin )
+        $scope.sensor.temperaturaMax = parseFloat($scope.sensor.temperaturaMax )
+        umonitorAPI.atualizarSensor($scope.sensor).then(function(result){
              $scope.msgSensor="Dados do Sensor atualizado!";
         });
     };
